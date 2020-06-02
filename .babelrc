@@ -1,0 +1,83 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": [
+          "> 1%",
+          "last 2 chrome version",
+          "last 2 firefox version",
+          "last 2 edge version",
+          "last 2 safari version",
+          "last 2 and_chr version",
+          "last 2 ios_saf version",
+          "IE 11"
+        ],
+        "modules": false
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-flow-strip-types",
+    [
+      "@babel/plugin-transform-spread",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "@babel/plugin-transform-react-constant-elements",
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "wrap"
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": [
+              "node >=10"
+            ]
+          }
+        ],
+        "@babel/react"
+      ],
+      "plugins": [
+        [
+          "@babel/plugin-transform-runtime"
+        ],
+        "transform-ensure-ignore",
+        "dynamic-import-node"
+      ]
+    },
+    "fastdev": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": [
+              "last 2 chrome version",
+              "last 2 firefox version"
+            ],
+            "modules": false
+          }
+        ],
+        "@babel/react"
+      ]
+    }
+  }
+}
