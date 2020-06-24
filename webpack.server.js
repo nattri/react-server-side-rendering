@@ -7,7 +7,7 @@ module.exports = {
     externals: [nodeExternals()],
     output: {
       path: path.resolve('server-build'),
-      filename: 'index.js'
+      filename: './src/index.js'
     },
     module: {
         rules: [

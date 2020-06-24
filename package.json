@@ -4,9 +4,10 @@
   "description": "React server side rendering app",
   "main": "index.js",
   "scripts": {
-    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
+    "dev:build-server": "webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon ./server-build/index.js",
-    "dev": "npm-run-all --parallel dev:*"
+    "dev": "NODE_ENV=development && npm-run-all --parallel dev:build-server dev:start",
+    "dev:windows": "SET NODE_ENV=development & npm-run-all --parallel dev:build-server:windows dev:start"
   },
   "repository": {
     "type": "git",
