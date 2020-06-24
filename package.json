@@ -7,7 +7,7 @@
     "dev:build-server": "webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon ./server-build/index.js",
     "dev": "NODE_ENV=development && npm-run-all --parallel dev:build-server dev:start",
-    "dev:windows": "SET NODE_ENV=development & npm-run-all --parallel dev:build-server:windows dev:start"
+    "dev:windows": "SET NODE_ENV=development & npm-run-all --parallel dev:build-server dev:start"
   },
   "repository": {
     "type": "git",
